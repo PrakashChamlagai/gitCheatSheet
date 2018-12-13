@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Git Cheat Sheet</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <h1><b>Git</b> Cheat Sheet</h1>
+            <p>presented by <b>TOWER</b> Version control with Git - made easy</p>
+        </nav> 
+
+        <div id="wrapper">
+            <div class="col">
+                <div class="section">
+                    <h3 class="headingOne">Create</h3>
+                    <p>Colone an existing repository <br>
+                    <span class="gitCommands">$ git clone ssh://user@domain.com/repo.git </span></p>
+                    <p>Create a new local repository <br>
+                    <span class="gitCommands">$ git init </span></p>
+                </div>
+    
+                <div class="section">
+                    <h3 class="headingOne">Local changes</h3>
+                    <p>Changed files in your working directory <br>
+                    <span class="gitCommands">$ git status </span></p>
+                    <p>Changes to tracked files <br>
+                    <span class="gitCommands">$ git diff</span></p>
+                    <p>Add all current changes to the next commit <br>
+                    <span class="gitCommands">$ git add</span></p>
+                    <p>Add some change in &lt;file&gt;to the next commit <br>
+                    <span class="gitCommands">$ git add -p  &lt;file &gt;</span></p>
+                    <p>Commit all local changes in tracked files <br>
+                    <span class="gitCommands">$ commit -a</span></p>
+                    <p>Commit previously staged changes <br>
+                    <span class="gitCommands">$ git commit</span></p>
+                    <p>Change the last commit <br>
+                    <span class="secondary">Don't amend published commits</span> <br>
+                    <span class="gitCommands">$ git commit --amend</span></p>
+                </div>
+    
+                <div class="section">
+                    <h3 class="headingOne">Commit History</h3>
+                    <p>Show all commits, starting with newest <br>
+                    <span class="gitCommands">$ git log</span></p>
+                    <p>Show changes over time for a specific file <br>
+                    <span class="gitCommands">$ git loc -p &lt;file&gt;</span></p>
+                    <p>Who changed what and when in &lt;file&gt; <br>
+                    <span class="gitCommands">$ git blame &lt;file&gt;</span></p>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="section">
+                    <h3 class="headingOne">Branches & Tags</h3>
+                    <p>List all exiting branches <br>
+                    <span class="gitCommands">$ git branch -av</span></p>
+                    <p>Switch HEAD branch <br>
+                    <span class="gitCommands">$ git checkout &lt;branch&gt;</span></p>
+                    <p>Create a new branch based <br> on your current HEAD<br>
+                    <span class="gitCommands">$ git branch&lt;new-branch&gt;</span></p>
+                    <p>Delete a local branch <br>
+                    <span class="gitCommands">$ git branch -d &lt;branch&gt;</span></p>
+                    <p>Mark the current commit with a tag <br>
+                    <span class="gitCommands">$ git tag &lt;tag-name&gt;</span></p>
+                </div>
+    
+                <div class="section">
+                    <h3 class="headingOne">Update & Publishe</h3>
+                    <p>Lis all currelty congfigured remotes <br>
+                    <span class="gitCommands">$ git remote -v</span></p>
+                    <p>Show information about a remote <br>
+                    <span class="gitCommands">$ git remote shoe &lt;remote&gt;</span></p>
+                    <p>Add new remote repository, named&lt;remote&gt; <br>
+                    <span class="gitCommands">$ git remote add &lt;shortname&gt; &lt;url&gt;</span></p>
+                    <p>Download all changes form &lt;remote&gt;, <br>but don't integrate into HEAD <br>
+                    <span class="gitCommands">$ git fetch &lt;remote&gt;</span></p>
+                    <p>Download all changes and directly <br>merve/integrate into HEAD <br>
+                    <span class="gitCommands">$ git git pull &lt;remote&gt; &lt;branch&gt;</span></p>
+                    <p>Publish local changes on a remote <br>
+                    <span class="gitCommands">$ git push &lt;remote&gt; &lt;branch&gt;</span></p>
+                    <p>Delete a branch on the remote <br>
+                    <span class="gitCommands">$ git branch -dr &lt;remote/branch&gt;</span></p>
+                    <p>Publish your tags <br>
+                    <span class="gitCommands">$ git push --tags</span></p>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="section">
+                    <h3 class="headingOne">Merge & Rebase</h3>
+                    <p>Mege &lt;branch&gt; into your current HEAD <br>
+                    <span class="gitCommands">$ git merge &lt;branch&gt;</span></p>
+                    <p>Rebase your current HEAD onto &lt;branch&gt; <br><span class="secondary">Dont' rebase published commits</span> <br>
+                    <span class="gitCommands">$ git rebase &lt;branch&gt;</span></p>
+                    <p>abort a rebase <br>
+                    <span class="gitCommands">$ git rebase --abort</span></p>
+                    <p>Continue a rebase after resolving conflicts <br>
+                    <span class="gitCommands">$ git rebase --continue</span></p>
+                    <p>Use your configured merge tool to <br> solve conflicts <br>
+                    <span class="gitCommands">$ git mergetool</span></p>
+                    <P>Use your editor tomanually solve conflicts and (after resolving Z) mark file as resolved <br>
+                    <span class="gitCommands">$ git add &lt;resolved-file&gt;</span> <br>
+                    <span class="gitCommands">$ git rm &lt;resolved-file&gt;</span></P>
+                </div>
+    
+                <div class="section">
+                    <h3 class="headingOne">Undo</h3>
+                    <p>Discard all local changes in your working directory <br>
+                    <span class="gitCommands">$ git reset --hard HEAD</span></p>
+                    <p>Discard local changes in a specific file <br>
+                    <span class="gitCommands">$ git checkout HEAD &lt;file&gt;</span></p>
+                    <p>Revert a commit (vy producing a new commit with contracry changes) <br>
+                    <span class="gitCommands">$ git revert &lt;commit&gt;</span></p>
+                    <p>...and preserve all changes as unstaged changes <br>
+                    <span class="gitCommands">$ git reset &lt;commit&gt;</span></p>
+                    <p>...and preserve uncommmitted local changes <br>
+                    <span class="gitCommands">$ git reset --keep &lt;commit&gt;</span></p>
+                </div>
+            </div>
+        </div><!-- End of wrapper  -->
+    </div> 
+</body>
+</html>
